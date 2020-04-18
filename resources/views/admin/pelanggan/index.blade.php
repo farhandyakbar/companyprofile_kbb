@@ -115,12 +115,13 @@
     });
 
     $('button#editPelanggan').on('click', function () {
-        var username = $(this).val("username");
-        var password = $(this).val("password");
-        var email = $(this).val("email");
-        var nama_lengkap = $(this).val("nama_lengkap");
-        var alamat = $(this).val("email");
-        var no_telp = $(this).val("no_telp");
+        var username = $(this).data("username");
+        var password = $(this).data("password");
+        var email = $(this).data("email");
+        var nama_lengkap = $(this).data("nama_lengkap");
+        var alamat = $(this).data("email");
+        var no_telp = $(this).data("no_telp");
+        var href = $(this).attr('href');
 
         $('#updateForm').attr('action', href);
         $('#username').val(username);
