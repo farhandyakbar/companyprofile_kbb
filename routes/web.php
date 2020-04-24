@@ -3,7 +3,7 @@
 use App\Http\Controllers\KategoriController;
 use Illuminate\Support\Facades\Route;
 
-/*
+/*  
 |--------------------------------------------------------------------------
 | Web Routes
 |--------------------------------------------------------------------------
@@ -15,6 +15,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', 'PagesController@home');
+Route::resource('/barang', 'BarangController');
 Route::resource('/kategori', 'KategoriController');
 Route::resource('/pelanggan', 'PelangganController');
 Route::get('login', function () {

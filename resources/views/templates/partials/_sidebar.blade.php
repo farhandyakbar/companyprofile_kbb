@@ -19,7 +19,7 @@
                         <div id="submenu-1" class="collapse submenu" style="">
                             <ul class="nav flex-column">
                                 <li class="nav-item">
-                                    <a class="nav-link" href="#">Barang</a>
+                                    <a class="nav-link" href="/barang">Barang</a>
                                 </li>
                                 <li class="nav-item">
                                     <a class="nav-link" href="/kategori">Kategori</a>
