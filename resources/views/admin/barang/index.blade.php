@@ -27,6 +27,7 @@
                             <tr>
                                 <th>No</th>
                                 <th>Nama Barang</th>
+                                <th>Kategori</th>
                                 <th>Deskripsi</th>
                                 <th>Aksi</th>
                             </tr>
@@ -36,7 +37,8 @@
                             <tr>
                                 <th scope="row">{{ $loop->iteration }}</th>
                                 <td>{{ $barang->nama }}</td>
-                                <td>{{ $barang->keterangan }}</td>
+                                <td>{{ $barang->kategori }}</td>
+                                <td>{{ $barang->deskripsi }}</td>
                                 <td>
                                     <button href="{{ route('barang.update', $barang->id ) }}" class="btn btn-primary"
                                     id="editbarang" data-id="{{ $barang->id }}" data-nama="{{ $barang->nama }}" data-keterangan="{{ $barang->keterangan }}">Edit</button>
@@ -50,6 +52,7 @@
                             <tr>
                                 <th>No</th>
                                 <th>Nama Barang</th>
+                                <th>Kategori</th>
                                 <th>Deskripsi</th>
                                 <th>Aksi</th>
                             </tr>
