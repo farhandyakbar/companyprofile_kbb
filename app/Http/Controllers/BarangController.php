@@ -26,7 +26,7 @@ class BarangController extends Controller
      */
     public function create()
     {
-        return view('barang.create');
+        return view('admin.barang.create');
     }
 
     /**
