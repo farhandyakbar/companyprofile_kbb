@@ -22,33 +22,28 @@
                             data-parsley-validate="">
                             @csrf
                             <div class="form-group">
-                                <label for="inputUserName">Username</label>
-                                <input type="text" name="username" data-parsley-trigger="change" required=""
-                                    placeholder="Username" autocomplete="off" class="form-control">
+                                <label>Username</label>
+                                <input type="text" class="form-control" name="username" data-parsley-trigger="change" required="">
                             </div>
                             <div class="form-group">
-                                <label for="inputUserName">Password</label>
-                                <input type="text" name="password" data-parsley-trigger="change" required=""
-                                    placeholder="Password" autocomplete="off" class="form-control">
+                                <label>Password</label>
+                                <input type="text" class="form-control" name="password" data-parsley-trigger="change" required="">
                             </div>
                             <div class="form-group">
-                                <label for="inputUserName">Email</label>
-                                <input type="email" name="email" data-parsley-trigger="change" required=""
-                                    placeholder="email" autocomplete="off" class="form-control">
+                                <label>Email</label>
+                                <input type="email" class="form-control" name="email" data-parsley-trigger="change" required="">
                             </div>
                             <div class="form-group">
-                                <label for="inputUserName">Nama Lengkap</label>
-                                <input type="text" name="nama_lengkap" data-parsley-trigger="change" required=""
-                                    placeholder="Nama lengkap" autocomplete="off" class="form-control">
+                                <label>Nama Lengkap</label>
+                                <input type="text" class="form-control" name="nama_lengkap" data-parsley-trigger="change" required="" >
                             </div>
                             <div class="form-group">
-                                <label for="inputEmail">Alamat</label>
-                                <textarea class="form-control" rows="3" name="alamat" placeholder="Alamat"></textarea>
+                                <label>Alamat</label>
+                                <textarea class="form-control" rows="3" name="alamat"></textarea>
                             </div>
                             <div class="form-group">
-                                <label for="inputUserName">No. Telepon</label>
-                                <input type="text" name="no_telp" data-parsley-trigger="change" required="" 
-                                    placeholder="No. Telp" autocomplete="off" class="form-control">
+                                <label>No. Telepon</label>
+                                <input type="text" class="form-control" name="no_telp" data-parsley-trigger="change" required="">
                             </div>
                             <div class="row">
                                 <div class="ml-3">

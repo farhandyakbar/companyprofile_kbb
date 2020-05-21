@@ -22,13 +22,12 @@
                             @csrf
                             {{ method_field('PUT') }}
                             <div class="form-group">
-                                <label for="inputUserName">Nama</label>
-                                <input type="text" name="nama" data-parsley-trigger="change" id="nama" required=""
-                                    placeholder="Nama Kategori" autocomplete="off" class="form-control">
+                                <label>Nama</label>
+                                <input type="text" class="form-control" name="nama" id="nama" data-parsley-trigger="change" required="">
                             </div>
                             <div class="form-group">
-                                <label for="inputEmail">Keterangan</label>
-                                <textarea id="keterangan" class="form-control" rows="3" name="keterangan"></textarea>
+                                <label>Keterangan</label>
+                                <textarea class="form-control" name="keterangan" rows="3" id="keterangan"></textarea>
                             </div>
                             <div class="row">
                                 <div class="ml-3">

@@ -11,24 +11,24 @@
         </div>
         <div class="card">
             <div class="card-body">
-                <form>
+                <form id="tambahBarang">
                     <div class="form-group">
-                        <label class="col-form-label">Nama Barang</label>
-                        <input id="nama" type="text" class="form-control">
+                        <label>Nama Barang</label>
+                        <input type="text" class="form-control" required="">
                     </div>
                     <div class="form-group">
-                        <label for="input-select">Kategori Barang</label>
-                        <select class="form-control" id="kategori">
+                        <label>Kategori Barang</label>
+                        <select class="form-control" id="kategori" name="kategori">
                             <option>Choose Example</option>
                         </select>
                     </div>
                     <div class="form-group">
-                        <label for="exampleFormControlTextarea1">Deskripsi</label>
-                        <textarea class="form-control" id="deskripsi" rows="3"></textarea>
+                        <label>Deskripsi</label>
+                        <textarea class="form-control" name="kategori" rows="3"></textarea>
                     </div>
                     <div class="form-group">
-                        <label for="inputText4" class="col-form-label">Harga</label>
-                        <input id="harga" type="number" class="form-control" placeholder="Harga">
+                        <label>Harga</label>
+                        <input type="number" class="form-control" name="harga">
                     </div>
                     <div class="form-group">
                         <label for="inputText4" class="col-form-label">Stok</label>
@@ -39,6 +39,8 @@
                         <label class="custom-file-label" for="customFile">Gambar</label>
                     </div>
                     <a href="#" type="submit" class="btn btn-primary">Simpan</a>
+                    <a href="#" class="btn btn-danger">Batal</a>
+                    <a href="#" onclick="resetForm()" class="btn btn-warning">Hapus Field</a>
                 </form>
             </div>
         </div>
@@ -48,3 +50,9 @@
 <!-- end basic form  -->
 <!-- ============================================================== -->
 @endsection
+
+<script>
+    function resetForm() {
+        document.getElementById("tambahBarang").reset();
+    }
+</script>

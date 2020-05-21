@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Response;
 use App\Models\Barang;
+use App\Models\Kategori;
 use Illuminate\Http\Request;
 
 class BarangController extends Controller
