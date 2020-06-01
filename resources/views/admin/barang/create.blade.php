@@ -35,8 +35,8 @@
                         <input id="stok" type="number" class="form-control" placeholder="Stok">
                     </div>
                     <div class="custom-file mb-3">
-                        <input type="file" class="custom-file-input" id="customFile">
                         <label class="custom-file-label" for="customFile">Gambar</label>
+                        <input type="file" class="custom-file-input" id="customFile">
                     </div>
                     <a href="#" type="submit" class="btn btn-primary">Simpan</a>
                     <a href="#" class="btn btn-danger">Batal</a>
