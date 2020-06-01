@@ -11,36 +11,47 @@
         </div>
         <div class="card">
             <div class="card-body">
-                <form id="tambahBarang">
+                <form class="form-horizontal form-label-left" id="form-data" method="post" enctype="multipart/form-data" action="{{ route('barang.store') }}">
+                    @csrf
                     <div class="form-group">
                         <label>Nama Barang</label>
-                        <input type="text" class="form-control" required="">
+                        <input type="text" class="form-control" required="" name="nama">
                     </div>
                     <div class="form-group">
                         <label>Kategori Barang</label>
                         <select class="form-control" id="kategori" name="kategori">
-                            <option>Choose Example</option>
+                            <option value="">Pilih Kategori</option>
+                                @foreach($kategori as $item)
+                                <option value="{{ $item->id }}">{{ $item->nama }}</option>
+                                @endforeach
+                            </select>
                         </select>
                     </div>
                     <div class="form-group">
                         <label>Deskripsi</label>
-                        <textarea class="form-control" name="kategori" rows="3"></textarea>
+                        <textarea class="form-control" name="deskripsi" rows="3"></textarea>
                     </div>
                     <div class="form-group">
                         <label>Harga</label>
                         <input type="number" class="form-control" name="harga">
                     </div>
                     <div class="form-group">
-                        <label for="inputText4" class="col-form-label">Stok</label>
-                        <input id="stok" type="number" class="form-control" placeholder="Stok">
+                        <label>Stok</label>
+                        <input id="stok" type="number" class="form-control" placeholder="Stok" name="stok">
                     </div>
-                    <div class="custom-file mb-3">
-                        <label class="custom-file-label" for="customFile">Gambar</label>
-                        <input type="file" class="custom-file-input" id="customFile">
+                    <div class="form-group">
+                        <label>Masukkan Gambar</label>
+                        <input type="file" class="form-control" name="gambar">
                     </div>
-                    <a href="#" type="submit" class="btn btn-primary">Simpan</a>
-                    <a href="#" class="btn btn-danger">Batal</a>
-                    <a href="#" onclick="resetForm()" class="btn btn-warning">Hapus Field</a>
+                    <div class="row">
+                        <div class="ml-3">
+                            <p class="text-left">
+                                <button type="submit" class="btn btn-space btn-primary">Submit</button>
+                                <button class="btn btn-space btn-secondary">Cancel</button>
+                                <button class="btn btn-space btn-warning" onclick="resetForm()">Hapus Field</button>
+                            </p>
+                        </div>
+                    </div>
                 </form>
             </div>
         </div>

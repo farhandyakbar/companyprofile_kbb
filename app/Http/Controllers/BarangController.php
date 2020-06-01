@@ -16,7 +16,7 @@ class BarangController extends Controller
      */
     public function index()
     {
-        $barang = barang::get();
+        $barang = Barang::get();
         return view('admin.barang.index', compact('barang'));
     }
 
@@ -27,7 +27,8 @@ class BarangController extends Controller
      */
     public function create()
     {
-        return view('admin.barang.create');
+        $kategori = Kategori::get();
+        return view('admin.barang.create', compact('kategori'));
     }
 
     /**
@@ -42,7 +43,16 @@ class BarangController extends Controller
         $this->validate($request, [
             'nama' => 'required|unique:barang'
         ]);
-        Barang::create($request->all());
+        $insert = Barang::create($request->all());
+        
+        if($request->hasFile('gambar')) {
+            $uploadedFile = $request->file('gambar');
+            $extension = '.'.$uploadedFile->getClientOriginalExtension();
+            $filename  =$insert->id."_".date("dmy-His").$extension;
+            $uploadedFile->move(base_path('public/images/gambar'), $filename);       
+            $insert->update(['gambar'=>$filename]);              
+        }
+
         return redirect()->route('barang.index')->with('berhasil', 'Data ' .$request->nama.' Berhasil Ditambahkan');
     }
 

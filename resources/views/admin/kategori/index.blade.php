@@ -32,16 +32,16 @@
                             </tr>
                         </thead>
                         <tbody>
-                            @foreach ($kategori as $kategori)
+                            @foreach ($kategori as $item)
                             <tr>
                                 <th scope="row">{{ $loop->iteration }}</th>
-                                <td>{{ $kategori->nama }}</td>
-                                <td>{{ $kategori->keterangan }}</td>
+                                <td>{{ $item->nama }}</td>
+                                <td>{{ $item->keterangan }}</td>
                                 <td>
-                                    <button href="{{ route('kategori.update', $kategori->id ) }}" class="btn btn-primary"
-                                    id="editKategori" data-id="{{ $kategori->id }}" data-nama="{{ $kategori->nama }}" data-keterangan="{{ $kategori->keterangan }}">Edit</button>
-                                    <button href="{{ route('kategori.destroy', $kategori->id) }}" id="delete"
-                                        data-title="{{ $kategori->nama }}" class="btn btn-danger">Delete</button>
+                                    <button href="{{ route('kategori.update', $item->id ) }}" class="btn btn-primary"
+                                    id="editKategori" data-id="{{ $item->id }}" data-nama="{{ $item->nama }}" data-keterangan="{{ $item->keterangan }}">Edit</button>
+                                    <button href="{{ route('kategori.destroy', $item->id) }}" id="delete"
+                                        data-title="{{ $item->nama }}" class="btn btn-danger">Delete</button>
                                 </td>
                             </tr>
                             @endforeach

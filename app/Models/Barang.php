@@ -9,4 +9,8 @@ class Barang extends Model
     protected $table = 'barang';
     public $timestamps = false; 
     protected $fillable = ['nama', 'kategori', 'deskripsi', 'harga', 'stok', 'gambar'];
+    
+    public function posisi(){
+        return $this->belongsTo(PosisiPemain::class);
+    }
 }

@@ -37,24 +37,24 @@
                             </tr>
                         </thead>
                         <tbody>
-                            @foreach ($pelanggan as $pelanggan)
+                            @foreach ($pelanggan as $item)
                             <tr>
                                 <th scope="row">{{ $loop->iteration }}</th>
-                                <td>{{ $pelanggan->username }}</td>
-                                <td>{{ $pelanggan->email }}</td>
-                                <td>{{ $pelanggan->nama_lengkap }}</td>
-                                <td>{{ $pelanggan->alamat }}</td>
-                                <td>{{ $pelanggan->no_telp }}</td>
+                                <td>{{ $item->username }}</td>
+                                <td>{{ $item->email }}</td>
+                                <td>{{ $item->nama_lengkap }}</td>
+                                <td>{{ $item->alamat }}</td>
+                                <td>{{ $item->no_telp }}</td>
                                 <td>
-                                    <button href="{{ route('pelanggan.update', $pelanggan->id ) }}"
-                                        class="btn btn-primary" id="editPelanggan" data-id="{{ $pelanggan->id }}"
-                                        data-username="{{ $pelanggan->username }}"
-                                        data-password="{{ $pelanggan->password }}" data-email="{{ $pelanggan->email }}"
-                                        data-nama_lengkap="{{ $pelanggan->nama_lengkap }}"
-                                        data-alamat="{{ $pelanggan->alamat }}"
-                                        data-no_telp="{{ $pelanggan->no_telp }}">Edit</button>
-                                    <button href="{{ route('pelanggan.destroy', $pelanggan->id) }}" id="delete"
-                                            data-title="{{ $pelanggan->nama }}" class="btn btn-danger">Delete</button>
+                                    <button href="{{ route('pelanggan.update', $item->id ) }}"
+                                        class="btn btn-primary" id="editPelanggan" data-id="{{ $item->id }}"
+                                        data-username="{{ $item->username }}"
+                                        data-password="{{ $item->password }}" data-email="{{ $item->email }}"
+                                        data-nama_lengkap="{{ $item->nama_lengkap }}"
+                                        data-alamat="{{ $item->alamat }}"
+                                        data-no_telp="{{ $item->no_telp }}">Edit</button>
+                                    <button href="{{ route('pelanggan.destroy', $item->id) }}" id="delete"
+                                            data-title="{{ $item->nama }}" class="btn btn-danger">Delete</button>
                                 </td>
                             </tr>
                             @endforeach
