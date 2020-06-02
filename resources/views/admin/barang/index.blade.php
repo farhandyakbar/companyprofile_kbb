@@ -37,7 +37,7 @@
                             <tr>
                                 <th scope="row">{{ $loop->iteration }}</th>
                                 <td>{{ $item->nama }}</td>
-                                <td>{{ $item->kategori }}</td>
+                                <td>{{ $item->kategori->nama }}</td>
                                 <td>{{ $item->deskripsi }}</td>
                                 <td>
                                     <button href="{{ route('barang.update', $item->id ) }}" class="btn btn-primary"
