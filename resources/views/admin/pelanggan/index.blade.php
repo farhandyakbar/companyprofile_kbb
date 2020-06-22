@@ -42,7 +42,7 @@
                                 <th scope="row">{{ $loop->iteration }}</th>
                                 <td>{{ $item->username }}</td>
                                 <td>{{ $item->email }}</td>
-                                <td>{{ $item->nama_lengkap }}</td>
+                                <td>{{ $item->nama }}</td>
                                 <td>{{ $item->alamat }}</td>
                                 <td>{{ $item->no_telp }}</td>
                                 <td>
@@ -50,11 +50,11 @@
                                         class="btn btn-primary" id="editPelanggan" data-id="{{ $item->id }}"
                                         data-username="{{ $item->username }}"
                                         data-password="{{ $item->password }}" data-email="{{ $item->email }}"
-                                        data-nama_lengkap="{{ $item->nama_lengkap }}"
+                                        data-nama="{{ $item->nama }}"
                                         data-alamat="{{ $item->alamat }}"
                                         data-no_telp="{{ $item->no_telp }}">Edit</button>
                                     <button href="{{ route('pelanggan.destroy', $item->id) }}" id="delete"
-                                            data-title="{{ $item->nama }}" class="btn btn-danger">Delete</button>
+                                            data-title="{{ $item->username }}" class="btn btn-danger">Delete</button>
                                 </td>
                             </tr>
                             @endforeach
@@ -118,7 +118,7 @@
         var username = $(this).data("username");
         var password = $(this).data("password");
         var email = $(this).data("email");
-        var nama_lengkap = $(this).data("nama_lengkap");
+        var nama = $(this).data("nama");
         var alamat = $(this).data("email");
         var no_telp = $(this).data("no_telp");
         var href = $(this).attr('href');
@@ -127,7 +127,7 @@
         $('#username').val(username);
         $('#password').val(password);
         $('#email').val(email);
-        $('#nama_lengkap').val(nama_lengkap);
+        $('#nama').val(nama);
         $('#alamat').val(alamat);
         $('#no_telp').val(no_telp);
         $("#editModal").modal('show');

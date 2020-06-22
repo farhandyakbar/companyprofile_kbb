@@ -18,31 +18,37 @@
     <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
         <div class="card">
             <div class="card-body">
-                <h2 class="card-title" style="display: inline-block;">Master Barang</h2>
-            <a href="{{ route("barang.create") }}" class="btn btn-info float-right mb-3"> <i class="fa fa-plus"></i>
-                    Tambah Data</a>
+                <h2 class="card-title" style="display: inline-block;">Master Karyawan</h2>
+                <a href="#" class="btn btn-info float-right mb-3" data-toggle="modal" data-target="#createModal"> <i
+                    class="fa fa-plus"></i>
+                Tambah Data</a>
+            <hr>
                 <div class="table-responsive">
                     <table class="table table-striped table-bordered first">
                         <thead>
                             <tr>
                                 <th>No</th>
-                                <th>Nama Barang</th>
-                                <th>Kategori</th>
-                                <th>Deskripsi</th>
+                                <th>Nama</th>
+                                <th>Username</th>
+                                <th>Password</th>                             
                                 <th>Aksi</th>
                             </tr>
                         </thead>
                         <tbody>
-                            @foreach ($barang as $item)
+                            @foreach ($karyawan as $item)
                             <tr>
                                 <th scope="row">{{ $loop->iteration }}</th>
                                 <td>{{ $item->nama }}</td>
-                                <td>{{ $item->kategori->nama }}</td>
-                                <td>{{ $item->deskripsi }}</td>
+                                <td>{{ $item->username }}</td>
+                                <td>{{ $item->password }}</td>
                                 <td>
-                                    <a href="{{ route('barang.edit', $item->id ) }}" class="btn btn-primary" >Edit</a>
-                                    <button href="{{ route('barang.destroy', $item->id) }}" id="delete"
-                                        data-title="{{ $item->nama }}" class="btn btn-danger">Delete</button>
+                                    <button href="{{ route('karyawan.update', $item->id ) }}"
+                                        class="btn btn-primary" id="editKaryawan" data-id="{{ $item->id }}"
+                                        data-username="{{ $item->username }}"
+                                        data-password="{{ $item->password }}" 
+                                        data-nama="{{ $item->nama }}">Edit</button>
+                                    <button href="{{ route('karyawan.destroy', $item->id) }}" id="delete"
+                                        data-title="{{ $item->username }}" class="btn btn-danger">Delete</button>
                                 </td>
                             </tr>
                             @endforeach
@@ -50,9 +56,9 @@
                         <tfoot>
                             <tr>
                                 <th>No</th>
-                                <th>Nama Barang</th>
-                                <th>Kategori</th>
-                                <th>Deskripsi</th>
+                                <th>Nama</th>
+                                <th>Username</th>
+                                <th>Password</th>                             
                                 <th>Aksi</th>
                             </tr>
                         </tfoot>
@@ -60,8 +66,8 @@
                 </div>
             </div>
         </div>
-        @include('admin.kategori.create')
-        @include('admin.kategori.edit')
+        @include('admin.karyawan.create')
+        @include('admin.karyawan.edit')
     </div>
     <!-- ============================================================== -->
     <!-- end basic table  -->
@@ -83,7 +89,7 @@
         var href = $(this).attr('href');
         var name = $(this).data('title');
         Swal.fire({
-                title: "Anda yakin untuk menghapus barang \"" + name + "\"?",
+                title: "Anda yakin untuk menghapus karyawan \"" + name + "\"?",
                 text: "Setelah dihapus, data tidak bisa dikembalikan!",
                 icon: 'warning',
                 showCancelButton: true,
@@ -100,15 +106,17 @@
             })
     });
 
-    $('button#editKategori').on('click', function () {
+    $('button#editKaryawan').on('click', function () {
         var id = $(this).data("id");
+        var username = $(this)data("username")
         var nama = $(this).data("nama");
-        var ket = $(this).data("keterangan");
+        var ket = $(this).data("password");
         var href = $(this).attr('href');
 
         $('#updateForm').attr('action', href);
+        $('#username').val(username);
         $('#nama').val(nama);
-        $('#keterangan').val(ket);
+        $('#keterangan').val(password);
         $("#editModal").modal('show');
     });
 

@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Response;
 use App\Models\Barang;
+use App\Models\BarangDetail;
 use App\Models\Kategori;
 use Illuminate\Http\Request;
 
@@ -45,12 +46,18 @@ class BarangController extends Controller
         ]);
         $insert = Barang::create($request->all());
         
-        if($request->hasFile('gambar')) {
-            $uploadedFile = $request->file('gambar');
-            $extension = '.'.$uploadedFile->getClientOriginalExtension();
-            $filename  =$insert->id."_".date("dmy-His").$extension;
-            $uploadedFile->move(base_path('public/images/gambar'), $filename);       
-            $insert->update(['gambar'=>$filename]);              
+        foreach ($request->gambar as $index => $gambar) {
+            if($request->file('gambar')[$index]) {
+                $uploadedFile = $request->file('gambar')[$index];
+                $extension = '.'.$uploadedFile->getClientOriginalExtension();
+                $filename  =$insert->id."_".($index+1)."_".date("dmy-His").$extension;
+                $uploadedFile->move(base_path('public/images/gambar'), $filename);          
+                
+                $insertGambar = BarangDetail::create([
+                    "id_barang" =>$insert->id,
+                    "gambar" => $filename
+                ]);   
+            }
         }
 
         return redirect()->route('barang.index')->with('berhasil', 'Data ' .$request->nama.' Berhasil Ditambahkan');
@@ -75,7 +82,11 @@ class BarangController extends Controller
      */
     public function edit($id)
     {
-        $barang = Barang::find($id)->toArray();
+        $kategori = Kategori::get();
+        $barang = Barang::find($id);
+        $barangDetail = BarangDetail::where('id_barang',$id)->get();
+        // dd($barangDetail);
+        return view('admin.barang.edit', compact('kategori','barang','barangDetail'));
     }
 
     /**
@@ -107,6 +118,7 @@ class BarangController extends Controller
     public function destroy(Barang $barang)
     {
         Barang::destroy($barang->id);
+        BarangDetail::where('id_barang', $barang->id)->delete();
         return redirect('barang')->with('info', 'Data Berhasil Dihapus');
     }
 }

@@ -3,10 +3,10 @@
 namespace App\Http\Controllers;
 
 use Response;
-use App\Models\Pelanggan;
+use App\Models\Karyawan;
 use Illuminate\Http\Request;
 
-class PelangganController extends Controller
+class KaryawanController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,8 +15,8 @@ class PelangganController extends Controller
      */
     public function index()
     {
-        $pelanggan = pelanggan::get();
-        return view('admin.pelanggan.index', compact('pelanggan'));
+        $karyawan = Karyawan::get();
+        return view('admin.karyawan.index', compact('karyawan'));
     }
 
     /**
@@ -26,7 +26,7 @@ class PelangganController extends Controller
      */
     public function create()
     {
-        return view('pelanggan.create');
+        return view('admin.karyawan.create');
     }
 
     /**
@@ -39,15 +39,12 @@ class PelangganController extends Controller
     {
         // dd($request->all());
         $this->validate($request, [
-            'username' => 'required|unique:pelanggan',
-            'password' => 'required:pelanggan',
-            'email' => 'required:pelanggan',
-            'nama' => 'required:pelanggan',
-            'alamat' => 'required:pelanggan'
-            
+            'nama' => 'required:karyawan',
+            'username' => 'required:karyawan',
+            'password' => 'required:karyawan'
         ]);
-        Pelanggan::create($request->all());
-        return redirect()->route('pelanggan.index')->with('berhasil', 'Data ' .$request->username.' Berhasil Ditambahkan');
+        Karyawan::create($request->all());
+        return redirect()->route('karyawan.index')->with('berhasil', 'Data ' .$request->username.' Berhasil Ditambahkan');
     }
 
     /**
@@ -69,7 +66,7 @@ class PelangganController extends Controller
      */
     public function edit($id)
     {
-        $pelanggan =  Pelanggan::find($id)->toArray();
+        $karyawan =  Karyawan::find($id)->toArray();
     }
 
     /**
@@ -79,18 +76,17 @@ class PelangganController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Pelanggan $pelanggan)
+    public function update(Request $request, Karyawan $karyawan)
     {
         $request->validate([
             'username' => 'required',
         ]);
 
-        Pelanggan::where('id', $pelanggan->id)
+        Karyawan::where('id', $karyawan->id)
                 ->update([
                     'username' => $request->username,
-                    
         ]);
-        return redirect('pelanggan')->with('notif', 'Data Berhasil Diubah');
+        return redirect('karyawan')->with('notif', 'Data Berhasil Diubah');
     }
 
     /**
@@ -99,9 +95,9 @@ class PelangganController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Pelanggan $pelanggan)
+    public function destroy(Karyawan $karyawan)
     {
-        Pelanggan::destroy($pelanggan->id);
-        return redirect('pelanggan')->with('info', 'Data Berhasil Dihapus');
+        Karyawan::destroy($karyawan->id);
+        return redirect('karyawan')->with('info', 'Data Berhasil Dihapus');
     }
 }

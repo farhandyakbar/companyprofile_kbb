@@ -9,7 +9,7 @@
             <div class="modal-dialog" role="document">
                 <div class="modal-content">
                     <div class="modal-header">
-                        <h5 class="modal-title" id="exampleModalLabel">Tambah Pelanggan Baru</h5>
+                        <h5 class="modal-title" id="exampleModalLabel">Tambah Karyawan Baru</h5>
                         <a href="#" class="close" data-dismiss="modal" aria-label="Close">
                             <span aria-hidden="true">&times;</span>
                         </a>
@@ -18,9 +18,13 @@
                         <!-- ============================================================== -->
                         <!-- basic form -->
                         <!-- ============================================================== -->
-                        <form action="{{ route('pelanggan.store') }}" method="POST"
+                        <form action="{{ route('karyawan.store') }}" method="POST" id="basicform"
                             data-parsley-validate="">
                             @csrf
+                            <div class="form-group">
+                                <label>Nama</label>
+                                <input type="text" class="form-control" name="nama" data-parsley-trigger="change" required="">
+                            </div>
                             <div class="form-group">
                                 <label>Username</label>
                                 <input type="text" class="form-control" name="username" data-parsley-trigger="change" required="">
@@ -28,22 +32,6 @@
                             <div class="form-group">
                                 <label>Password</label>
                                 <input type="text" class="form-control" name="password" data-parsley-trigger="change" required="">
-                            </div>
-                            <div class="form-group">
-                                <label>Email</label>
-                                <input type="email" class="form-control" name="email" data-parsley-trigger="change" required="">
-                            </div>
-                            <div class="form-group">
-                                <label>Nama Lengkap</label>
-                                <input type="text" class="form-control" name="nama" data-parsley-trigger="change" required="" >
-                            </div>
-                            <div class="form-group">
-                                <label>Alamat</label>
-                                <textarea class="form-control" rows="3" name="alamat"></textarea>
-                            </div>
-                            <div class="form-group">
-                                <label>No. Telepon</label>
-                                <input type="text" class="form-control" name="no_telp" data-parsley-trigger="change" required="">
                             </div>
                             <div class="row">
                                 <div class="ml-3">

@@ -18,6 +18,7 @@ Route::get('/', 'PagesController@home');
 Route::resource('/barang', 'BarangController');
 Route::resource('/kategori', 'KategoriController');
 Route::resource('/pelanggan', 'PelangganController');
+Route::resource('/karyawan', 'KaryawanController');
 Route::get('login', function () {
     return view('login');
 });
