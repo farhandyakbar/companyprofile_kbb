@@ -41,6 +41,7 @@
                                 <td>{{ $item->deskripsi }}</td>
                                 <td>
                                     <a href="{{ route('barang.edit', $item->id ) }}" class="btn btn-primary" >Edit</a>
+                                    <a href="" class="btn btn-warning" >Detail</a>
                                     <button href="{{ route('barang.destroy', $item->id) }}" id="delete"
                                         data-title="{{ $item->nama }}" class="btn btn-danger">Delete</button>
                                 </td>
