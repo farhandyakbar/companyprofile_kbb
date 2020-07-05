@@ -71,7 +71,10 @@ class BarangController extends Controller
      */
     public function show($id)
     {
-        //
+        $barang = Barang::find($id);
+        $barangDetail = BarangDetail::where('id_barang',$id)->get();
+        // dd($barangDetail);
+        return view('admin.barang.detail', compact('barang','barangDetail'));
     }
 
     /**
