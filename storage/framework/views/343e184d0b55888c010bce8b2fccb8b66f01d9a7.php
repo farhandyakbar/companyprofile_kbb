@@ -39,7 +39,7 @@
                                 <td><?php echo e($item->deskripsi); ?></td>
                                 <td>
                                     <a href="<?php echo e(route('barang.edit', $item->id )); ?>" class="btn btn-primary" >Edit</a>
-                                    <a href="" class="btn btn-warning" >Detail</a>
+                                    <a href="<?php echo e(route('barang.show', $item->id )); ?>" class="btn btn-warning" >Detail</a>
                                     <button href="<?php echo e(route('barang.destroy', $item->id)); ?>" id="delete"
                                         data-title="<?php echo e($item->nama); ?>" class="btn btn-danger">Delete</button>
                                 </td>

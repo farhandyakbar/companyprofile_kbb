@@ -6,40 +6,47 @@
     <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
         <div class="section-block" id="basicform">
             <h3 class="section-title">Detail Data Barang</h3>
-        <a href="<?php echo e(route('barang.index')); ?>" class="" > Kembali  </a>
-        <a href="<?php echo e(route('barang.edit',$barang->id )); ?>" class="" > Ubah  </a>
         </div>
         <div class="card">
             <div class="card-body"> 
                 <?php echo csrf_field(); ?>
                 <div class="form-group">
                     <label>Nama Barang</label>
-                <input type="text" class="form-control" value="<?php echo e($barang->nama); ?>" name="nama">
+                <input type="text" class="form-control" value="<?php echo e($barang->nama); ?>" name="nama" disabled>
                 </div>
                 <div class="form-group">
                     <label>Kategori Barang</label> 
-                    <input class="form-control" value="<?php echo e($barang->kategori->nama); ?>" name="deskripsi" rows="3">
+                    <input class="form-control" value="<?php echo e($barang->kategori->nama); ?>" name="deskripsi" rows="3" disabled>
                 </div>
                 <div class="form-group">
                     <label>Deskripsi</label>
-                <input class="form-control" value="<?php echo e($barang->deskripsi); ?>" name="deskripsi" rows="3">
+                <input class="form-control" value="<?php echo e($barang->deskripsi); ?>" name="deskripsi" rows="3" disabled>
                 </div>
                 <div class="form-group">
                     <label>Harga</label>
-                <input type="number" class="form-control" value="<?php echo e($barang->harga); ?>" name="harga">
+                <input type="number" class="form-control" value="<?php echo e($barang->harga); ?>" name="harga" disabled>
                 </div>
                 <div class="form-group">
                     <label>Stok</label>
-                <input id="stok" type="number" class="form-control" value="<?php echo e($barang->stok); ?>" placeholder="Stok" name="stok">
+                <input id="stok" type="number" class="form-control" value="<?php echo e($barang->stok); ?>" placeholder="Stok" name="stok" disabled>
+                </div>
+                <div class="form-group">
+                <?php $__currentLoopData = $barangDetail; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $item): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                <img src="<?php echo e(asset('images/gambar/'.$item->gambar)); ?>" alt="" width="300" height="200">
+                <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+                </div>
+                <div class="form-group">
+                    <div class="ml-3">
+                        <a href="<?php echo e(route('barang.edit',$barang->id )); ?>" class="btn btn-primary">Edit</a>
+                        <a href="<?php echo e(route('barang.index')); ?>" class="btn btn-secondary">Kembali</a>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
 </div>
 
-<?php $__currentLoopData = $barangDetail; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $item): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-<img src="<?php echo e(asset('images/gambar/'.$item->gambar)); ?>" alt="">
-<?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+
 <!-- ============================================================== -->
 <!-- end basic form  -->
 <!-- ============================================================== -->

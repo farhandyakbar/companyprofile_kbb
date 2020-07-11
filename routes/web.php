@@ -22,3 +22,11 @@ Route::resource('/karyawan', 'KaryawanController');
 Route::get('login', function () {
     return view('login');
 });
+
+
+Route::get('/home', 'HomeController@index')->name('home');
+
+// Auth::routes();
+// Route::get(‘/home’, ‘HomeController@index’)->name(‘home’);
+
+Route::get('/home', 'HomeController@index')->name('home');
