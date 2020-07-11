@@ -33,15 +33,13 @@
                 <input id="stok" type="number" class="form-control" value="{{ $barang->stok }}" placeholder="Stok" name="stok" disabled>
                 </div>
                 <div class="form-group">
-                @foreach ($barangDetail as $item)
-                <img src="{{ asset('images/gambar/'.$item->gambar) }}" alt="" width="300" height="200">
-                @endforeach
+                    @foreach ($barangDetail as $item)
+                    <img src="{{ asset('images/gambar/'.$item->gambar) }}" alt="" width="350" height="250" disabled>
+                    @endforeach
                 </div>
-                <div class="form-group">
-                    <div class="ml-3">
-                        <a href="{{ route('barang.edit',$barang->id ) }}" class="btn btn-primary">Edit</a>
-                        <a href="{{ route('barang.index') }}" class="btn btn-secondary">Kembali</a>
-                    </div>
+                <div class="form-groupgit">
+                    <a href="{{ route('barang.index') }}" class="btn btn-secondary">Kembali</a>
+                    <a href="{{ route('barang.edit',$barang->id ) }}" class="btn btn-primary">Ubah</a>
                 </div>
             </div>
         </div>
