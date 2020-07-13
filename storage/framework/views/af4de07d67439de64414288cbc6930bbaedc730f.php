@@ -31,15 +31,13 @@
                 <input id="stok" type="number" class="form-control" value="<?php echo e($barang->stok); ?>" placeholder="Stok" name="stok" disabled>
                 </div>
                 <div class="form-group">
-                <?php $__currentLoopData = $barangDetail; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $item): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-                <img src="<?php echo e(asset('images/gambar/'.$item->gambar)); ?>" alt="" width="300" height="200">
-                <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+                    <?php $__currentLoopData = $barangDetail; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $item): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                    <img src="<?php echo e(asset('images/gambar/'.$item->gambar)); ?>" alt="" width="350" height="250" disabled>
+                    <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
                 </div>
-                <div class="form-group">
-                    <div class="ml-3">
-                        <a href="<?php echo e(route('barang.edit',$barang->id )); ?>" class="btn btn-primary">Edit</a>
-                        <a href="<?php echo e(route('barang.index')); ?>" class="btn btn-secondary">Kembali</a>
-                    </div>
+                <div class="form-groupgit">
+                    <a href="<?php echo e(route('barang.index')); ?>" class="btn btn-secondary">Kembali</a>
+                    <a href="<?php echo e(route('barang.edit',$barang->id )); ?>" class="btn btn-primary">Ubah</a>
                 </div>
             </div>
         </div>

@@ -107,7 +107,7 @@
       'users' => 
       array (
         'driver' => 'eloquent',
-        'model' => 'App\\User',
+        'model' => 'App\\Models\\User',
       ),
     ),
     'passwords' => 
