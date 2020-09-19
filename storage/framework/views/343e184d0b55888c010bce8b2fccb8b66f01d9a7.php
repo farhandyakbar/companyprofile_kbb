@@ -26,7 +26,7 @@
                                 <th>No</th>
                                 <th>Nama Barang</th>
                                 <th>Kategori</th>
-                                <th>Deskripsi</th>
+                                
                                 <th>Aksi</th>
                             </tr>
                         </thead>
@@ -36,7 +36,7 @@
                                 <th scope="row"><?php echo e($loop->iteration); ?></th>
                                 <td><?php echo e($item->nama); ?></td>
                                 <td><?php echo e($item->kategori->nama); ?></td>
-                                <td><?php echo e($item->deskripsi); ?></td>
+                                
                                 <td>
                                     <a href="<?php echo e(route('barang.edit', $item->id )); ?>" class="btn btn-primary" >Edit</a>
                                     <a href="<?php echo e(route('barang.show', $item->id )); ?>" class="btn btn-warning" >Detail</a>
@@ -51,7 +51,7 @@
                                 <th>No</th>
                                 <th>Nama Barang</th>
                                 <th>Kategori</th>
-                                <th>Deskripsi</th>
+                                
                                 <th>Aksi</th>
                             </tr>
                         </tfoot>

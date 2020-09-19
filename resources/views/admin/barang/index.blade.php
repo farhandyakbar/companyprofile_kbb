@@ -28,7 +28,7 @@
                                 <th>No</th>
                                 <th>Nama Barang</th>
                                 <th>Kategori</th>
-                                <th>Deskripsi</th>
+                                {{-- <th>Deskripsi</th> --}}
                                 <th>Aksi</th>
                             </tr>
                         </thead>
@@ -38,7 +38,7 @@
                                 <th scope="row">{{ $loop->iteration }}</th>
                                 <td>{{ $item->nama }}</td>
                                 <td>{{ $item->kategori->nama }}</td>
-                                <td>{{ $item->deskripsi }}</td>
+                                {{-- <td>{{ $item->deskripsi }}</td> --}}
                                 <td>
                                     <a href="{{ route('barang.edit', $item->id ) }}" class="btn btn-primary" >Edit</a>
                                     <a href="{{ route('barang.show', $item->id ) }}" class="btn btn-warning" >Detail</a>
@@ -53,7 +53,7 @@
                                 <th>No</th>
                                 <th>Nama Barang</th>
                                 <th>Kategori</th>
-                                <th>Deskripsi</th>
+                                {{-- <th>Deskripsi</th> --}}
                                 <th>Aksi</th>
                             </tr>
                         </tfoot>

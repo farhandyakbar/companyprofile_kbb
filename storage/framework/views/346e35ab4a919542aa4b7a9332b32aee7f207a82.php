@@ -35,14 +35,12 @@
         <!-- ============================================================== -->
         <!-- left sidebar -->
         <!-- ============================================================== -->
+
         <?php echo $__env->make('templates.partials._sidebar', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
         <!-- ============================================================== -->
         <!-- end left sidebar -->
         <!-- ============================================================== -->
-
-        <!-- ============================================================== -->
-        <!-- wrapper  -->
-        <!-- ============================================================== -->
+        
         <div class="dashboard-wrapper">
             <div class="container-fluid dashboard-content">
                 <?php echo $__env->yieldContent('content'); ?>
@@ -62,6 +60,7 @@
         <!-- Optional JavaScript -->
         <!-- jquery 3.3.1 -->
         <?php echo $__env->make('templates.partials._script', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
+    </div>
 </body>
 
 </html>

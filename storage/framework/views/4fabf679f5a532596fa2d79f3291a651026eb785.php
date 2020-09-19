@@ -13,7 +13,7 @@
                     </li>
                     <li class="nav-item ">
                         <a class="nav-link active" href="#" data-toggle="collapse" aria-expanded="false"
-                            data-target="#" aria-controls="submenu-1"><i
+                            data-target="#submenu-1" aria-controls="submenu-1"><i
                                 class="fa fa-fw fa-user-circle"></i>Master <span
                                 class="badge badge-success">6</span></a>
                         <div id="submenu-1" class="collapse submenu" style="">
@@ -55,5 +55,4 @@
             </div>
         </nav>
     </div>
-</div>
-<?php /**PATH C:\xampp\htdocs\WEB\kp-company_profile_kbb\resources\views/templates/partials/_sidebar.blade.php ENDPATH**/ ?>
+</div><?php /**PATH C:\xampp\htdocs\WEB\kp-company_profile_kbb\resources\views/templates/partials/_sidebar.blade.php ENDPATH**/ ?>
