@@ -19,14 +19,14 @@
         <div class="card">
             <div class="card-body">
                 <h2 class="card-title" style="display: inline-block;">Master Transaksi</h2>
-            <a href="{{ route("barang.create") }}" class="btn btn-info float-right mb-3"> <i class="fa fa-plus"></i>
-                    Tambah Data</a>
+                <a href="/cetak_pdf/transaksi" class="btn btn-info float-right mb-3">
+                    Cetak Data</a>
                 <div class="table-responsive">
                     <table class="table table-striped table-bordered first">
                         <thead>
                             <tr>
                                 <th>No</th>
-                                <th>id_pelanggan</th>
+                                <th>Nama Pelanggan</th>
                                 <th>Bukti Pembayaran</th>
                                 <th>Tanggal</th>
                                 <th>Subtotal</th>
@@ -38,14 +38,16 @@
                             @foreach ($transaksi as $item)
                             <tr>
                                 <th scope="row">{{ $loop->iteration }}</th>
-                                <td>{{ $item->id_pelanggan }}</td>
-                                <td>{{ $item->Bukti }}</td>
+                                <td>{{ $item->pelanggan->nama}}</td>
+                                <td>{{ $item->bukti_pembayaran }}</td>
+                                <td>{{ $item->tanggal }}</td>
+                                <td>{{ $item->subtotal }}</td>
                                 {{-- <td>{{ $item->deskripsi }}</td> --}}
                                 <td>
-                                    <a href="{{ route('barang.edit', $item->id ) }}" class="btn btn-primary" >Edit</a>
-                                    <a href="{{ route('barang.show', $item->id ) }}" class="btn btn-warning" >Detail</a>
+                                    <a href="{{ route('transaksi.show', $item->id ) }}" class="btn btn-warning" >Detail</a>
+                                    {{-- <a href="{{ route('barang.show', $item->id ) }}" class="btn btn-warning" >Detail</a>
                                     <button href="{{ route('barang.destroy', $item->id) }}" id="delete"
-                                        data-title="{{ $item->nama }}" class="btn btn-danger">Delete</button>
+                                        data-title="{{ $item->nama }}" class="btn btn-danger">Delete</button> --}}
                                 </td>
                             </tr>
                             @endforeach
@@ -53,7 +55,7 @@
                         <tfoot>
                             <tr>
                                 <th>No</th>
-                                <th>id_pelanggan</th>
+                                <th>Nama Pelanggan</th>
                                 <th>Bukti Pembayaran</th>
                                 <th>Tanggal</th>
                                 <th>Subtotal</th>
