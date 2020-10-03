@@ -20,6 +20,9 @@ Route::group(['middleware' => 'auth'], function () {
     Route::resource('/kategori', 'KategoriController');
     Route::resource('/pelanggan', 'PelangganController');
     Route::resource('/karyawan', 'KaryawanController');
+    Route::resource('/transaksi', 'TransaksiController');
+
+    Route::get('/cetak_pdf/transaksi', 'TransaksiController@cetak_pdf');
 // Route::get('login', function () {
 //     return view('login');
 // });

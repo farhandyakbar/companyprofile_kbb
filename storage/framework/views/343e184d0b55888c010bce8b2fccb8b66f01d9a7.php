@@ -17,8 +17,8 @@
         <div class="card">
             <div class="card-body">
                 <h2 class="card-title" style="display: inline-block;">Master Barang</h2>
-            <a href="<?php echo e(route("barang.create")); ?>" class="btn btn-info float-right mb-3"> <i class="fa fa-plus"></i>
-                    Tambah Data</a>
+                <a href="<?php echo e(route("barang.create")); ?>" class="btn btn-info float-right mb-3"> <i class="fa fa-plus"></i>
+                        Tambah Data</a>
                 <div class="table-responsive">
                     <table class="table table-striped table-bordered first">
                         <thead>

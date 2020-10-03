@@ -31,6 +31,9 @@
                                     <a class="nav-link" href="/pelanggan">Pelanggan</a>
                                 </li>
                                 <li class="nav-item">
+                                    <a class="nav-link" href="/transaksi">Transaksi</a>
+                                </li>
+                                <li class="nav-item">
                                     <a class="nav-link" href="#" data-toggle="collapse" aria-expanded="false"
                                         data-target="#submenu-1-1" aria-controls="submenu-1-1">Infulencer</a>
                                     <div id="submenu-1-1" class="collapse submenu" style="">
